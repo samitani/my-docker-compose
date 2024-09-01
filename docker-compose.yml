@@ -5,7 +5,6 @@ services:
       - ./centos7my57/var/lib:/var/lib/mysql
       - ./centos7my57/etc/my.cnf:/etc/my.cnf
     privileged: true
-    command: "/sbin/init"
     network_mode: "host"
   centos7my80:
     image: centos7my80
@@ -13,5 +12,4 @@ services:
       - ./centos7my80/var/lib:/var/lib/mysql
       - ./centos7my80/etc/my.cnf:/etc/my.cnf
     privileged: true
-    command: "/sbin/init"
     network_mode: "host"
