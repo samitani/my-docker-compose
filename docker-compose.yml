@@ -13,3 +13,17 @@ services:
       - ./centos7my80/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
+  rocky9my84:
+    image: rocky9my84
+    volumes:
+      - ./rocky9my84/var/lib:/var/lib/mysql
+      - ./rocky9my84/etc/my.cnf:/etc/my.cnf
+    privileged: true
+    network_mode: "host"
+  rocky9my90:
+    image: rocky9my90
+    volumes:
+      - ./rocky9my90/var/lib:/var/lib/mysql
+      - ./rocky9my90/etc/my.cnf:/etc/my.cnf
+    privileged: true
+    network_mode: "host"

@@ -9,7 +9,7 @@ RUN yum install -y https://vault.centos.org/7.9.2009/updates/x86_64/Packages/cen
  && yum install -y epel-release
 
 
-RUN yum install -y screen vim git wget net-tools strace \
+RUN yum install -y screen vim git wget net-tools strace telnet \
  && yum install -y --nogpgcheck mysql-community-server mysql-community-libs-compat mysql-shell \
  && wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
 
