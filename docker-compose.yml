@@ -27,3 +27,10 @@ services:
       - ./rocky9my90/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
+  rocky9my80:
+    image: rocky9my80
+    volumes:
+      - ./rocky9my80/var/lib:/var/lib/mysql
+      - ./rocky9my80/etc/my.cnf:/etc/my.cnf
+    privileged: true
+    network_mode: "host"

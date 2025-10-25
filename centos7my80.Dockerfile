@@ -1,20 +1,7 @@
-FROM centos:7
-ENV container docker
+FROM centos7base
 
-RUN yum install -y https://vault.centos.org/7.9.2009/updates/x86_64/Packages/centos-release-7-9.2009.2.el7.centos.x86_64.rpm https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm \
- && yum-config-manager --disable base updates extras \
- && yum-config-manager --enable C7.9.2009-base C7.9.2009-updates C7.9.2009-extras \
- && yum install -y epel-release
-
-
-RUN yum install -y screen vim git wget net-tools strace telnet \
- && yum install -y --nogpgcheck mysql-community-server mysql-shell sysbench \
- && wget https://go.dev/dl/go1.22.5.linux-amd64.tar.gz
-
-RUN yum update -y --disablerepo='mysql*'
-
-RUN wget -O /root/.screenrc https://raw.githubusercontent.com/samitani/dotfiles/refs/heads/master/screenrc \
-    && wget -O /root/.vimrc https://raw.githubusercontent.com/samitani/dotfiles/refs/heads/master/vimrc
+RUN yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm \
+ && yum install -y --nogpgcheck mysql-community-server mysql-shell sysbench 
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
 systemd-tmpfiles-setup.service ] || rm -f $i; done); \
@@ -27,4 +14,3 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 VOLUME [ "/sys/fs/cgroup" ]
-CMD ["/usr/sbin/init"]
