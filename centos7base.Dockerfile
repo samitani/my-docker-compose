@@ -15,4 +15,6 @@ RUN yum install -y https://vault.centos.org/7.9.2009/updates/x86_64/Packages/cen
 RUN wget -O /root/.screenrc https://raw.githubusercontent.com/samitani/dotfiles/refs/heads/master/screenrc \
     && wget -O /root/.vimrc https://raw.githubusercontent.com/samitani/dotfiles/refs/heads/master/vimrc
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 CMD ["/usr/sbin/init"]

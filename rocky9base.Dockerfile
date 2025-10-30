@@ -1,4 +1,5 @@
 FROM rockylinux:9
+
 ENV container=docker
 ENV TZ="Asia/Tokyo"
 
