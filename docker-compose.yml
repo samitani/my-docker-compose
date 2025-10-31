@@ -1,36 +1,43 @@
 services:
-  centos7my57:
-    image: centos7my57
+  centos7my57rpm:
+    image: centos7my57rpm
     volumes:
-      - ./centos7my57/var/lib:/var/lib/mysql
-      - ./centos7my57/etc/my.cnf:/etc/my.cnf
+      - ./centos7my57rpm/var/lib:/var/lib/mysql
+      - ./centos7my57rpm/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
-  centos7my80:
-    image: centos7my80
+  centos7my80rpm:
+    image: centos7my80rpm
     volumes:
-      - ./centos7my80/var/lib:/var/lib/mysql
-      - ./centos7my80/etc/my.cnf:/etc/my.cnf
+      - ./centos7my80rpm/var/lib:/var/lib/mysql
+      - ./centos7my80rpm/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
-  rocky9my84:
-    image: rocky9my84
+  rocky9my84rpm:
+    image: rocky9my84rpm
     volumes:
-      - ./rocky9my84/var/lib:/var/lib/mysql
-      - ./rocky9my84/etc/my.cnf:/etc/my.cnf
+      - ./rocky9my84rpm/var/lib:/var/lib/mysql
+      - ./rocky9my84rpm/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
-  rocky9my90:
-    image: rocky9my90
+  rocky9my90rpm:
+    image: rocky9my90rpm
     volumes:
-      - ./rocky9my90/var/lib:/var/lib/mysql
-      - ./rocky9my90/etc/my.cnf:/etc/my.cnf
+      - ./rocky9my90rpm/var/lib:/var/lib/mysql
+      - ./rocky9my90rpm/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"
-  rocky9my80:
-    image: rocky9my80
+  rocky9my80rpm:
+    image: rocky9my80rpm
     volumes:
-      - ./rocky9my80/var/lib:/var/lib/mysql
-      - ./rocky9my80/etc/my.cnf:/etc/my.cnf
+      - ./rocky9my80rpm/var/lib:/var/lib/mysql
+      - ./rocky9my80rpm/etc/my.cnf:/etc/my.cnf
+    privileged: true
+    network_mode: "host"
+  rocky9my80src:
+    image: rocky9my80src
+    volumes:
+      - ./rocky9my80src/var/lib:/var/lib/mysql
+      - ./rocky9my80src/etc/my.cnf:/etc/my.cnf
     privileged: true
     network_mode: "host"

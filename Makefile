@@ -15,5 +15,5 @@ $(foreach var,$(TARGETS),$(eval $(call MAKEALL,$(var))))
 run:
 	docker-compose up -d
 	sleep 3
-	docker ps | grep -v NAMES | awk '{ print $$NF }' | xargs -I '{}' docker exec '{}' systemctl start mysqld
-	docker ps | grep -v NAMES | awk '{ print $$NF }' | xargs -I '{}' docker exec '{}' systemctl status mysqld
+	docker ps | grep -v NAMES | awk '{ print $$NF }' | grep rpm | xargs -I '{}' docker exec '{}' systemctl start mysqld
+	docker ps | grep -v NAMES | awk '{ print $$NF }' | grep rpm | xargs -I '{}' docker exec '{}' systemctl status mysqld
